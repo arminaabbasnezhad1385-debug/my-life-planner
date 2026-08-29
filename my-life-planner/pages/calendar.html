@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Calendar | My Life Planner</title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="../css/calendar.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+        <a
+            href="learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+        <a
+            href="goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+        <a
+            href="finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+        <a
+            href="journal.html"
+            class="menu-button"
+        >
+            Journal
+        </a>
+
+        <a
+            href="calendar.html"
+            class="menu-button active"
+        >
+            Calendar
+        </a>
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+    </nav>
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            🗓️ Persian Calendar
+        </h2>
+
+        <p>
+            See your plans, goals and activity in one place.
+        </p>
+
+    </div>
+
+
+    <div class="calendar-layout">
+
+
+        <!-- CALENDAR -->
+
+        <main class="calendar-main">
+
+            <section class="card calendar-card">
+
+
+                <!-- TOOLBAR -->
+
+                <div class="calendar-toolbar">
+
+                    <button
+                        type="button"
+                        id="previousMonthButton"
+                        class="calendar-nav-button"
+                    >
+                        ←
+                    </button>
+
+
+                    <div class="calendar-month-heading">
+
+                        <h2 id="calendarMonthTitle">
+                        </h2>
+
+                        <button
+                            type="button"
+                            id="calendarTodayButton"
+                            class="calendar-today-button"
+                        >
+                            Today
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="nextMonthButton"
+                        class="calendar-nav-button"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <!-- WEEK DAYS -->
+
+                <div class="calendar-weekdays">
+
+                    <div>شنبه</div>
+
+                    <div>یکشنبه</div>
+
+                    <div>دوشنبه</div>
+
+                    <div>سه‌شنبه</div>
+
+                    <div>چهارشنبه</div>
+
+                    <div>پنجشنبه</div>
+
+                    <div>جمعه</div>
+
+                </div>
+
+
+                <!-- DAYS -->
+
+                <div
+                    id="calendarDays"
+                    class="calendar-days"
+                >
+                </div>
+
+
+                <!-- LEGEND -->
+
+                <div class="calendar-legend">
+
+                    <span>
+                        📌 Event
+                    </span>
+
+                    <span>
+                        🎯 Goal
+                    </span>
+
+                    <span>
+                        📔 Journal
+                    </span>
+
+                    <span>
+                        💰 Finance
+                    </span>
+
+                    <span>
+                        🔥 Study
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="calendar-sidebar">
+
+
+            <!-- SELECTED DATE -->
+
+            <section class="card calendar-selected-card">
+
+                <p class="calendar-small-label">
+                    Selected Date
+                </p>
+
+
+                <h2
+                    id="selectedCalendarDate"
+                    dir="rtl"
+                >
+                </h2>
+
+
+                <p class="card-description">
+                    Everything connected to this day appears below.
+                </p>
+
+            </section>
+
+
+            <!-- ADD EVENT -->
+
+            <section class="card calendar-event-card">
+
+                <h2>
+                    📌 Add Event
+                </h2>
+
+
+                <div class="calendar-event-form">
+
+                    <div>
+
+                        <label for="calendarEventTitle">
+                            Event
+                        </label>
+
+                        <input
+                            type="text"
+                            id="calendarEventTitle"
+                            placeholder="Example: Doctor appointment"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="calendarEventCategory">
+                            Category
+                        </label>
+
+                        <select id="calendarEventCategory">
+
+                            <option value="Personal">
+                                Personal
+                            </option>
+
+                            <option value="Work">
+                                Work
+                            </option>
+
+                            <option value="Learning">
+                                Learning
+                            </option>
+
+                            <option value="Appointment">
+                                Appointment
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="addCalendarEventButton"
+                        class="calendar-add-event-button"
+                    >
+                        + Add Event
+                    </button>
+
+
+                    <p
+                        id="calendarEventMessage"
+                        class="calendar-event-message"
+                    >
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- DAY DETAILS -->
+
+            <section class="card">
+
+                <div class="calendar-details-header">
+
+                    <h2>
+                        Day Details
+                    </h2>
+
+                    <span id="calendarDetailCount">
+                        0 items
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="calendarDayDetails"
+                    class="calendar-day-details"
+                >
+                </div>
+
+
+                <div
+                    id="calendarEmptyDetails"
+                    class="calendar-empty-details"
+                >
+
+                    <span>
+                        🌷
+                    </span>
+
+                    <p>
+                        Nothing planned for this day.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </aside>
+
+    </div>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/calendar.js"></script>
+
+</body>
+
+</html>

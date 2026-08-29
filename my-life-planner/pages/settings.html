@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Settings | My Life Planner
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="../css/settings.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+        <a
+            href="learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+        <a
+            href="goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+        <a
+            href="work.html"
+            class="menu-button"
+        >
+            Work
+        </a>
+
+        <a
+            href="finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+        <a
+            href="journal.html"
+            class="menu-button"
+        >
+            Journal
+        </a>
+
+        <a
+            href="calendar.html"
+            class="menu-button"
+        >
+            Calendar
+        </a>
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+        <a
+            href="settings.html"
+            class="menu-button active"
+        >
+            Settings
+        </a>
+
+    </nav>
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            ⚙️ Settings
+        </h2>
+
+        <p>
+            Make your planner feel like your own.
+        </p>
+
+    </div>
+
+
+    <!-- PERSONALIZATION -->
+
+    <section class="card settings-section">
+
+        <div class="settings-heading">
+
+            <div>
+
+                <h2>
+                    🌷 Planner Identity
+                </h2>
+
+                <p class="card-description">
+                    Change the title shown at the top of every page.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="settings-form-group">
+
+            <label for="settingsPlannerName">
+                Planner Name
+            </label>
+
+
+            <input
+                type="text"
+                id="settingsPlannerName"
+                placeholder="🌷 My Life Planner"
+            >
+
+        </div>
+
+
+        <div class="settings-form-group">
+
+            <label for="settingsPlannerSubtitle">
+                Subtitle
+            </label>
+
+
+            <input
+                type="text"
+                id="settingsPlannerSubtitle"
+                placeholder="Plan your life. Track your progress."
+            >
+
+        </div>
+
+
+        <label class="settings-switch-row">
+
+            <div>
+
+                <strong>
+                    Persian Date
+                </strong>
+
+                <span>
+                    Show the current شمسی date below the title.
+                </span>
+
+            </div>
+
+
+            <input
+                type="checkbox"
+                id="settingsShowPersianDate"
+            >
+
+        </label>
+
+    </section>
+
+
+    <!-- THEME -->
+
+    <section class="card settings-section">
+
+        <h2>
+            🎨 Color Theme
+        </h2>
+
+        <p class="card-description">
+            Choose the main accent color for your planner.
+        </p>
+
+
+        <div
+            class="theme-options"
+            id="themeOptions"
+        >
+
+
+            <label class="theme-option rose-theme">
+
+                <input
+                    type="radio"
+                    name="plannerTheme"
+                    value="rose"
+                >
+
+                <span class="theme-preview"></span>
+
+                <strong>
+                    Rose
+                </strong>
+
+            </label>
+
+
+            <label class="theme-option lavender-theme">
+
+                <input
+                    type="radio"
+                    name="plannerTheme"
+                    value="lavender"
+                >
+
+                <span class="theme-preview"></span>
+
+                <strong>
+                    Lavender
+                </strong>
+
+            </label>
+
+
+            <label class="theme-option sage-theme">
+
+                <input
+                    type="radio"
+                    name="plannerTheme"
+                    value="sage"
+                >
+
+                <span class="theme-preview"></span>
+
+                <strong>
+                    Sage
+                </strong>
+
+            </label>
+
+
+            <label class="theme-option blue-theme">
+
+                <input
+                    type="radio"
+                    name="plannerTheme"
+                    value="blue"
+                >
+
+                <span class="theme-preview"></span>
+
+                <strong>
+                    Blue
+                </strong>
+
+            </label>
+
+
+            <label class="theme-option mocha-theme">
+
+                <input
+                    type="radio"
+                    name="plannerTheme"
+                    value="mocha"
+                >
+
+                <span class="theme-preview"></span>
+
+                <strong>
+                    Mocha
+                </strong>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- APPEARANCE -->
+
+    <section class="card settings-section">
+
+        <h2>
+            🌙 Appearance
+        </h2>
+
+
+        <div class="appearance-options">
+
+
+            <label class="appearance-option">
+
+                <input
+                    type="radio"
+                    name="plannerAppearance"
+                    value="light"
+                >
+
+                <span>
+                    ☀️
+                </span>
+
+                <strong>
+                    Light
+                </strong>
+
+            </label>
+
+
+            <label class="appearance-option">
+
+                <input
+                    type="radio"
+                    name="plannerAppearance"
+                    value="dark"
+                >
+
+                <span>
+                    🌙
+                </span>
+
+                <strong>
+                    Dark
+                </strong>
+
+            </label>
+
+
+            <label class="appearance-option">
+
+                <input
+                    type="radio"
+                    name="plannerAppearance"
+                    value="system"
+                >
+
+                <span>
+                    💻
+                </span>
+
+                <strong>
+                    System
+                </strong>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- DAILY SCORE -->
+
+    <section class="card settings-section">
+
+        <h2>
+            ⭐ Daily Score
+        </h2>
+
+
+        <p class="card-description">
+            Choose how important Learning is in your daily score.
+        </p>
+
+
+        <div class="score-weight-box">
+
+            <div class="score-weight-heading">
+
+                <span>
+                    Learning Weight
+                </span>
+
+                <strong id="learningWeightValue">
+                    20%
+                </strong>
+
+            </div>
+
+
+            <input
+                type="range"
+                id="settingsLearningWeight"
+                min="0"
+                max="50"
+                step="5"
+                value="20"
+            >
+
+
+            <div class="weight-explanation">
+
+                <span>
+                    Tasks + Habits:
+                    <strong id="activityWeightValue">
+                        80%
+                    </strong>
+                </span>
+
+
+                <span>
+                    Learning:
+                    <strong id="learningWeightSecond">
+                        20%
+                    </strong>
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SAVE -->
+
+    <section class="settings-save-section">
+
+        <button
+            type="button"
+            id="saveSettingsButton"
+            class="save-settings-button"
+        >
+            💾 Save Settings
+        </button>
+
+
+        <p
+            id="settingsMessage"
+            class="settings-message"
+        ></p>
+
+    </section>
+
+
+    <!-- DATA -->
+
+    <section class="card settings-section">
+
+        <h2>
+            🗂 Data & Backup
+        </h2>
+
+
+        <p class="card-description">
+            Back up your planner before making major changes.
+        </p>
+
+
+        <div class="settings-data-actions">
+
+
+            <button
+                type="button"
+                id="exportPlannerButton"
+                class="settings-secondary-button"
+            >
+                ⬇ Export Backup
+            </button>
+
+
+            <label
+                for="importPlannerInput"
+                class="settings-secondary-button settings-upload-label"
+            >
+                ⬆ Import Backup
+            </label>
+
+
+            <input
+                type="file"
+                id="importPlannerInput"
+                accept=".json,application/json"
+                hidden
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- RESET TODAY -->
+
+    <section class="card settings-section">
+
+        <h2>
+            ↺ Reset Today
+        </h2>
+
+
+        <p class="card-description">
+            Keep your lists, but remove today's completed checks.
+        </p>
+
+
+        <button
+            type="button"
+            id="resetTodayButton"
+            class="settings-warning-button"
+        >
+            Reset Today's Progress
+        </button>
+
+    </section>
+
+
+    <!-- DANGER ZONE -->
+
+    <section class="card settings-section danger-zone">
+
+        <h2>
+            ⚠️ Data Reset
+        </h2>
+
+
+        <p class="card-description">
+            Permanently delete one section of your planner.
+        </p>
+
+
+        <div class="reset-section-grid">
+
+            <select id="resetSectionSelect">
+
+                <option value="">
+                    Select a section...
+                </option>
+
+                <option value="tasks">
+                    Tasks
+                </option>
+
+                <option value="habits">
+                    Habits
+                </option>
+
+                <option value="learning">
+                    Learning
+                </option>
+
+                <option value="goals">
+                    Goals
+                </option>
+
+                <option value="work">
+                    Work
+                </option>
+
+                <option value="finance">
+                    Finance
+                </option>
+
+                <option value="journal">
+                    Journal
+                </option>
+
+                <option value="calendar">
+                    Calendar Events
+                </option>
+
+                <option value="focus">
+                    Focus
+                </option>
+
+                <option value="all">
+                    ALL PLANNER DATA
+                </option>
+
+            </select>
+
+
+            <button
+                type="button"
+                id="resetSectionButton"
+                class="settings-danger-button"
+            >
+                Delete Data
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/settings.js"></script>
+
+</body>
+
+</html>

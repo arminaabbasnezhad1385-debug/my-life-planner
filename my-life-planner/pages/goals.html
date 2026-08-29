@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Goals | My Life Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/goals.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>🌷 My Life Planner</h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+        <a
+            href="learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+        <a
+            href="goals.html"
+            class="menu-button active"
+        >
+            Goals
+        </a>
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+    </nav>
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            🎯 Goals
+        </h2>
+
+        <p>
+            Turn your goals into clear milestones.
+        </p>
+
+    </div>
+
+
+    <!-- GOALS SUMMARY -->
+
+    <section class="goal-summary">
+
+        <div class="goal-summary-item">
+
+            <span>
+                🎯 Total Goals
+            </span>
+
+            <strong data-goal-count>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="goal-summary-item">
+
+            <span>
+                ✅ Completed
+            </span>
+
+            <strong data-goal-completed>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="goal-summary-item">
+
+            <span>
+                📊 Average Progress
+            </span>
+
+            <strong data-goal-average>
+                0%
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD NEW GOAL -->
+
+    <section class="card goal-form-card">
+
+        <div class="goal-section-title">
+
+            <div>
+
+                <h2>
+                    ＋ Add New Goal
+                </h2>
+
+                <p class="card-description">
+                    Create a goal and break it into smaller milestones.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="goalForm">
+
+
+            <!-- TITLE -->
+
+            <div class="goal-form-group">
+
+                <label for="goalTitle">
+                    Goal Title
+                </label>
+
+                <input
+                    type="text"
+                    id="goalTitle"
+                    placeholder="Example: Learn Python"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="goal-form-grid">
+
+                <div class="goal-form-group">
+
+                    <label for="goalCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="goalCategory"
+                        placeholder="Learning, Work, Personal..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="goal-form-group">
+
+                    <label for="goalPriority">
+                        Priority
+                    </label>
+
+                    <select id="goalPriority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="goal-form-group">
+
+                    <label for="goalStatus">
+                        Status
+                    </label>
+
+                    <select id="goalStatus">
+
+                        <option value="Not Started">
+                            Not Started
+                        </option>
+
+                        <option
+                            value="In Progress"
+                            selected
+                        >
+                            In Progress
+                        </option>
+
+                        <option value="Paused">
+                            Paused
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEADLINE -->
+
+            <div class="goal-form-group">
+
+                <label>
+                    Deadline — تاریخ شمسی
+                </label>
+
+
+                <div class="jalali-date-inputs">
+
+
+                    <!-- DAY -->
+
+                    <div>
+
+                        <span class="date-mini-label">
+                            Day
+                        </span>
+
+                        <input
+                            type="number"
+                            id="goalDay"
+                            min="1"
+                            max="31"
+                            placeholder="10"
+                        >
+
+                    </div>
+
+
+                    <!-- MONTH -->
+
+                    <div>
+
+                        <span class="date-mini-label">
+                            Month
+                        </span>
+
+                        <select id="goalMonth">
+
+                            <option value="1">
+                                فروردین
+                            </option>
+
+                            <option value="2">
+                                اردیبهشت
+                            </option>
+
+                            <option value="3">
+                                خرداد
+                            </option>
+
+                            <option value="4">
+                                تیر
+                            </option>
+
+                            <option value="5">
+                                مرداد
+                            </option>
+
+                            <option value="6">
+                                شهریور
+                            </option>
+
+                            <option value="7">
+                                مهر
+                            </option>
+
+                            <option value="8">
+                                آبان
+                            </option>
+
+                            <option value="9">
+                                آذر
+                            </option>
+
+                            <option value="10">
+                                دی
+                            </option>
+
+                            <option value="11">
+                                بهمن
+                            </option>
+
+                            <option value="12">
+                                اسفند
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- YEAR -->
+
+                    <div>
+
+                        <span class="date-mini-label">
+                            Year
+                        </span>
+
+                        <input
+                            type="number"
+                            id="goalYear"
+                            min="1300"
+                            max="1600"
+                            placeholder="1405"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHY -->
+
+            <div class="goal-form-group">
+
+                <label for="goalWhy">
+                    Why is this goal important?
+                </label>
+
+                <textarea
+                    id="goalWhy"
+                    placeholder="Write your reason..."
+                ></textarea>
+
+            </div>
+
+
+            <p
+                id="goalFormMessage"
+                class="goal-form-message"
+            ></p>
+
+
+            <button
+                type="submit"
+                class="create-goal-button"
+            >
+                🎯 Create Goal
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- GOALS LIST -->
+
+    <section>
+
+        <div class="goals-list-header">
+
+            <h2>
+                My Goals
+            </h2>
+
+            <span id="goalListInfo">
+                Your active goals
+            </span>
+
+        </div>
+
+
+        <div id="goalsList"></div>
+
+
+        <div
+            id="emptyGoals"
+            class="empty-goals"
+        >
+
+            <div class="empty-goal-icon">
+                🎯
+            </div>
+
+            <h3>
+                No goals yet
+            </h3>
+
+            <p>
+                Create your first goal above.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/goals.js"></script>
+
+</body>
+
+</html>
