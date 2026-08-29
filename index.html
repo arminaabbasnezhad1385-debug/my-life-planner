@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Life Planner</title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/finance.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard-custom.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================
+         MENU
+    ====================================== -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="index.html"
+            class="menu-button active"
+        >
+            Dashboard
+        </a>
+
+
+        <a
+            href="pages/daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+
+        <a
+            href="pages/learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+
+        <a
+            href="pages/goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+
+        <a
+            href="pages/tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+
+        <a
+            href="pages/habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+
+        <a
+            href="pages/work.html"
+            class="menu-button"
+        >
+            Work
+        </a>
+
+
+        <a
+            href="pages/finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+
+        <a
+            href="pages/journal.html"
+            class="menu-button"
+        >
+            Journal
+        </a>
+
+
+        <a
+            href="pages/calendar.html"
+            class="menu-button"
+        >
+            Calendar
+        </a>
+
+
+        <a
+            href="pages/progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+
+        <a
+            href="pages/settings.html"
+            class="menu-button"
+        >
+            Settings
+        </a>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         DASHBOARD HEADER
+    ====================================== -->
+
+    <div class="dashboard-page-heading">
+
+        <div>
+
+            <h2>
+                ✨ My Dashboard
+            </h2>
+
+            <p>
+                Everything important, all in one place.
+            </p>
+
+        </div>
+
+
+        <a
+            href="pages/settings.html"
+            class="customize-dashboard-button"
+        >
+            ⚙ Customize Dashboard
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================
+         DASHBOARD CARDS
+    ====================================== -->
+
+    <main
+        id="dashboardCards"
+        class="dashboard-custom-grid"
+    >
+
+
+        <!-- =================================
+             FOCUS
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="focus"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    🎯 Today's Focus
+                </h2>
+
+            </div>
+
+
+            <p class="card-description">
+                What matters most today?
+            </p>
+
+
+            <div class="add-focus-box">
+
+                <input
+                    type="text"
+                    id="newFocusInput"
+                    placeholder="Add a focus..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    type="button"
+                    id="addFocusButton"
+                    class="small-add-button"
+                >
+                    + Add
+                </button>
+
+            </div>
+
+
+            <div
+                id="focusList"
+                class="focus-list"
+            >
+            </div>
+
+
+            <p
+                id="emptyFocusMessage"
+                class="empty-message"
+            >
+                No focus added yet 🌷
+            </p>
+
+
+            <a
+                href="pages/daily.html"
+                class="planner-button"
+            >
+                Open Daily Planner
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             TASKS
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="tasks"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    ☑️ Today's Tasks
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-dashboard-task-count
+                >
+                    0 / 0
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                Add and complete today's tasks.
+            </p>
+
+
+            <div class="task-manager">
+
+                <div class="add-task-box">
+
+                    <input
+                        type="text"
+                        class="new-task-input"
+                        placeholder="Write a task..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="small-add-button add-task-button"
+                    >
+                        + Add
+                    </button>
+
+                </div>
+
+
+                <div class="custom-task-list">
+                </div>
+
+
+                <p class="task-empty-message empty-message">
+                    No tasks yet 🌷
+                </p>
+
+            </div>
+
+
+            <a
+                href="pages/tasks.html"
+                class="planner-button"
+            >
+                Open Tasks
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             CUSTOM LEARNING
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="learning"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    📚 Today's Learning
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-dashboard-learning-progress
+                >
+                    0%
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                Your custom learning plan for today.
+            </p>
+
+
+            <div class="dashboard-learning-summary">
+
+                <div>
+
+                    <span>
+                        Subjects
+                    </span>
+
+                    <strong data-dashboard-learning-subjects>
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Sessions
+                    </span>
+
+                    <strong data-dashboard-learning-sessions>
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Planned
+                    </span>
+
+                    <strong data-dashboard-learning-minutes>
+                        0 min
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    data-dashboard-learning-fill
+                >
+                </div>
+
+            </div>
+
+
+            <div
+                id="dashboardLearningList"
+                class="dashboard-learning-list"
+            >
+            </div>
+
+
+            <div
+                id="dashboardLearningEmpty"
+                class="dashboard-widget-empty"
+            >
+
+                <span>
+                    📚
+                </span>
+
+                <p>
+                    No learning subjects yet.
+                </p>
+
+            </div>
+
+
+            <a
+                href="pages/learning.html"
+                class="planner-button"
+            >
+                Open Learning
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             HABITS
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="habits"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    🌱 Today's Habits
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-habits-status
+                >
+                    0 / 0
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                Build better habits one day at a time.
+            </p>
+
+
+            <div class="habit-manager">
+
+                <div class="add-habit-box">
+
+                    <input
+                        type="text"
+                        class="new-habit-input"
+                        placeholder="Add a habit..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="small-add-button add-habit-button"
+                    >
+                        + Add
+                    </button>
+
+                </div>
+
+
+                <div class="custom-habit-list">
+                </div>
+
+
+                <p class="habit-empty-message empty-message">
+                    No habits yet 🌷
+                </p>
+
+            </div>
+
+
+            <a
+                href="pages/habits.html"
+                class="planner-button"
+            >
+                Open Habit Tracker
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             DAILY PROGRESS
+        ================================== -->
+
+        <section
+            class="card dashboard-widget dashboard-center-widget"
+            data-dashboard-card="progress"
+        >
+
+            <h2>
+                📊 Daily Progress
+            </h2>
+
+
+            <p class="card-description">
+                Tasks and habits completed today.
+            </p>
+
+
+            <div class="daily-progress-number">
+
+                <span data-daily-progress-text>
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar big-progress-bar">
+
+                <div
+                    class="progress"
+                    data-daily-progress-fill
+                >
+                </div>
+
+            </div>
+
+
+            <div class="progress-stat-box">
+
+                <div>
+
+                    <span>
+                        ☑️ Tasks
+                    </span>
+
+                    <strong data-tasks-status>
+                        0 / 0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        🌱 Habits
+                    </span>
+
+                    <strong data-habits-status>
+                        0 / 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="pages/progress.html"
+                class="planner-button"
+            >
+                View Progress
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             DAILY SCORE
+        ================================== -->
+
+        <section
+            class="card dashboard-widget dashboard-center-widget"
+            data-dashboard-card="score"
+        >
+
+            <h2>
+                ⭐ Daily Score
+            </h2>
+
+
+            <div class="score">
+
+                <span
+                    class="score-number"
+                    data-daily-score
+                >
+                    0
+                </span>
+
+                <span>
+                    /10
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    data-score-fill
+                >
+                </div>
+
+            </div>
+
+
+            <div class="score-details">
+
+                <div>
+
+                    <span>
+                        Daily Completion
+                    </span>
+
+                    <strong data-score-percentage>
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        📚 Learning
+                    </span>
+
+                    <strong data-study-status>
+                        Not completed
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="card-description score-message"
+                data-score-message
+            >
+                Your day is ready to begin 🌷
+            </p>
+
+
+            <div class="streak-box">
+
+                <span class="streak-icon">
+                    🔥
+                </span>
+
+
+                <div>
+
+                    <span class="streak-label">
+                        Study Streak
+                    </span>
+
+                    <strong>
+
+                        <span data-study-streak>
+                            0
+                        </span>
+
+                        Days
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             WORK
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="work"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    💼 Work
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-dashboard-work-progress
+                >
+                    0%
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                Your current project overview.
+            </p>
+
+
+            <div class="dashboard-stat-grid">
+
+                <div>
+
+                    <span>
+                        Projects
+                    </span>
+
+                    <strong data-dashboard-work-total>
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Active
+                    </span>
+
+                    <strong data-dashboard-work-active>
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong data-dashboard-work-completed>
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    data-dashboard-work-fill
+                >
+                </div>
+
+            </div>
+
+
+            <div
+                id="dashboardWorkProject"
+                class="dashboard-feature-box"
+            >
+                No active projects.
+            </div>
+
+
+            <a
+                href="pages/work.html"
+                class="planner-button"
+            >
+                Open Work Planner
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             FINANCE
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="finance"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    💰 Finance
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-dashboard-finance-month
+                >
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                Current Persian month.
+            </p>
+
+
+            <div class="dashboard-finance-grid">
+
+                <div>
+
+                    <span>
+                        Income
+                    </span>
+
+                    <strong data-dashboard-finance-income>
+                        ۰ تومان
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Expenses
+                    </span>
+
+                    <strong data-dashboard-finance-expenses>
+                        ۰ تومان
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Savings
+                    </span>
+
+                    <strong data-dashboard-finance-savings>
+                        ۰ تومان
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Remaining
+                    </span>
+
+                    <strong data-dashboard-finance-remaining>
+                        ۰ تومان
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="pages/finance.html"
+                class="planner-button"
+            >
+                Open Finance
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             JOURNAL
+        ================================== -->
+
+        <section
+            class="card dashboard-widget"
+            data-dashboard-card="journal"
+        >
+
+            <div class="dashboard-widget-heading">
+
+                <h2>
+                    📔 Journal
+                </h2>
+
+
+                <span
+                    class="dashboard-mini-count"
+                    data-dashboard-journal-status
+                >
+                    Not written
+                </span>
+
+            </div>
+
+
+            <p class="card-description">
+                A little space for today's thoughts.
+            </p>
+
+
+            <div
+                id="dashboardJournalPreview"
+                class="dashboard-journal-preview"
+            >
+
+                <span class="dashboard-journal-icon">
+                    📔
+                </span>
+
+                <p>
+                    You haven't written today's journal yet.
+                </p>
+
+            </div>
+
+
+            <a
+                href="pages/journal.html"
+                class="planner-button"
+            >
+                Open Journal
+            </a>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/focus.js"></script>
+
+<script src="js/tasks.js"></script>
+
+<script src="js/habits.js"></script>
+
+<script src="js/progress.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

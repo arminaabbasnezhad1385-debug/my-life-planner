@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Progress | My Life Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <h1>🌷 My Life Planner</h1>
+
+        <p>Plan your life. Track your progress.</p>
+
+    </header>
+
+
+    <nav class="planner-menu">
+
+        <a href="../index.html" class="menu-button">
+            Dashboard
+        </a>
+
+        <a href="daily.html" class="menu-button">
+            Daily
+        </a>
+
+        <a href="learning.html" class="menu-button">
+            Learning
+        </a>
+
+        <a href="goals.html" class="menu-button">
+            Goals
+        </a>
+
+        <a href="tasks.html" class="menu-button">
+            Tasks
+        </a>
+
+        <a href="habits.html" class="menu-button">
+            Habits
+        </a>
+
+        <a href="progress.html" class="menu-button active">
+            Progress
+        </a>
+
+    </nav>
+
+
+    <div class="page-title">
+
+        <h2>📊 Progress Dashboard</h2>
+
+        <p>
+            Your progress is calculated automatically.
+        </p>
+
+    </div>
+
+
+    <div class="progress-page-grid">
+
+
+        <div class="card">
+
+            <h2>Today's Progress</h2>
+
+
+            <div class="daily-progress-number">
+
+                <span data-daily-progress-text>
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar big-progress-bar">
+
+                <div
+                    class="progress"
+                    data-daily-progress-fill
+                ></div>
+
+            </div>
+
+
+            <p class="card-description">
+                Tasks + Habits completed today.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>☑️ Tasks</h2>
+
+
+            <div class="progress-summary-number">
+
+                <strong data-task-progress-text>
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    data-task-progress-fill
+                ></div>
+
+            </div>
+
+
+            <p>
+
+                <span data-tasks-status>
+                    0 / 0
+                </span>
+
+                completed
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>🏃🏻‍♀️ Habits</h2>
+
+
+            <div class="progress-summary-number">
+
+                <strong data-habit-progress-text>
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    data-habit-progress-fill
+                ></div>
+
+            </div>
+
+
+            <p>
+
+                <span data-habits-status>
+                    0 / 0
+                </span>
+
+                completed
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <div class="card">
+
+        <h2>🌷 Daily Score</h2>
+
+
+        <div class="score">
+
+            <span
+                class="score-number"
+                data-daily-score
+            >
+                0
+            </span>
+
+            <span>/10</span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress"
+                data-score-fill
+            ></div>
+
+        </div>
+
+
+        <div class="streak-box">
+
+            <span class="streak-icon">
+                🔥
+            </span>
+
+
+            <div>
+
+                <span class="streak-label">
+                    Study Streak
+                </span>
+
+
+                <strong>
+
+                    <span data-study-streak>
+                        0
+                    </span>
+
+                    Days
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <a href="../index.html" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/progress.js"></script>
+
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>

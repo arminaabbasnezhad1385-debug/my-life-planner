@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Learning | My Life Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/learning-custom.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+        <a
+            href="learning.html"
+            class="menu-button active"
+        >
+            Learning
+        </a>
+
+        <a
+            href="goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+        <a
+            href="work.html"
+            class="menu-button"
+        >
+            Work
+        </a>
+
+        <a
+            href="finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+        <a
+            href="journal.html"
+            class="menu-button"
+        >
+            Journal
+        </a>
+
+        <a
+            href="calendar.html"
+            class="menu-button"
+        >
+            Calendar
+        </a>
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+    </nav>
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            📚 My Learning
+        </h2>
+
+        <p>
+            Create your own study plan and track your sessions.
+        </p>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <section class="learning-summary-grid">
+
+        <div class="learning-summary-card">
+
+            <span>
+                📚 Subjects
+            </span>
+
+            <strong data-learning-subjects>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="learning-summary-card">
+
+            <span>
+                📝 Sessions
+            </span>
+
+            <strong data-learning-sessions>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="learning-summary-card">
+
+            <span>
+                ✅ Completed Today
+            </span>
+
+            <strong data-learning-completed>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="learning-summary-card">
+
+            <span>
+                ⏱ Planned Time
+            </span>
+
+            <strong data-learning-minutes>
+                0 min
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD SUBJECT -->
+
+    <section class="card learning-create-card">
+
+        <h2>
+            ＋ Add Learning Subject
+        </h2>
+
+        <p class="card-description">
+            Add anything you want to study.
+        </p>
+
+
+        <form id="learningSubjectForm">
+
+            <div class="learning-create-grid">
+
+
+                <div class="learning-form-group">
+
+                    <label for="learningSubjectIcon">
+                        Icon
+                    </label>
+
+                    <input
+                        type="text"
+                        id="learningSubjectIcon"
+                        placeholder="📚"
+                        maxlength="5"
+                    >
+
+                </div>
+
+
+                <div class="learning-form-group learning-title-field">
+
+                    <label for="learningSubjectTitle">
+                        Subject Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="learningSubjectTitle"
+                        placeholder="Example: Python"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <p
+                id="learningFormMessage"
+                class="learning-form-message"
+            ></p>
+
+
+            <button
+                type="submit"
+                class="learning-create-button"
+            >
+                + Add Subject
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- SUBJECTS -->
+
+    <section>
+
+        <div class="learning-list-heading">
+
+            <div>
+
+                <h2>
+                    Today's Learning Plan
+                </h2>
+
+                <p>
+                    Add your own sessions and study time.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="learningSubjectsList">
+        </div>
+
+
+        <div
+            id="learningEmptyState"
+            class="learning-empty-state"
+        >
+
+            <span>
+                📚
+            </span>
+
+            <h3>
+                Your Learning Planner is empty
+            </h3>
+
+            <p>
+                Add your first subject above.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/learning.js"></script>
+
+</body>
+
+</html>

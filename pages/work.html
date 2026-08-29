@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work | My Life Planner</title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="../css/work.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+
+        <a
+            href="learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+
+        <a
+            href="goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+
+        <a
+            href="work.html"
+            class="menu-button active"
+        >
+            Work
+        </a>
+
+
+        <a
+            href="finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+
+        <a
+            href="journal.html"
+            class="menu-button"
+        >
+            Journal
+        </a>
+
+
+        <a
+            href="calendar.html"
+            class="menu-button"
+        >
+            Calendar
+        </a>
+
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+    </nav>
+
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            💼 Work Planner
+        </h2>
+
+        <p>
+            Manage your projects, clients and deadlines.
+        </p>
+
+    </div>
+
+
+
+    <!-- SUMMARY -->
+
+    <section class="work-summary-grid">
+
+
+        <div class="work-summary-card">
+
+            <span>
+                💼 Total Projects
+            </span>
+
+            <strong data-work-total>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="work-summary-card">
+
+            <span>
+                🚀 Active
+            </span>
+
+            <strong data-work-active>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="work-summary-card">
+
+            <span>
+                ✅ Completed
+            </span>
+
+            <strong data-work-completed>
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="work-summary-card">
+
+            <span>
+                📊 Average Progress
+            </span>
+
+            <strong data-work-average>
+                0%
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CREATE PROJECT -->
+
+    <section class="card work-form-card">
+
+        <h2>
+            ＋ New Project
+        </h2>
+
+
+        <p class="card-description">
+            Create a project and break it into manageable tasks.
+        </p>
+
+
+        <form id="workProjectForm">
+
+
+            <!-- TITLE -->
+
+            <div class="work-form-group">
+
+                <label for="workProjectTitle">
+                    Project Title
+                </label>
+
+
+                <input
+                    type="text"
+                    id="workProjectTitle"
+                    placeholder="Example: Design company website"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CLIENT / PRIORITY / STATUS -->
+
+            <div class="work-form-grid">
+
+
+                <div class="work-form-group">
+
+                    <label for="workClient">
+                        Client
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="workClient"
+                        placeholder="Client or company name"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="work-form-group">
+
+                    <label for="workPriority">
+                        Priority
+                    </label>
+
+
+                    <select id="workPriority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="work-form-group">
+
+                    <label for="workStatus">
+                        Status
+                    </label>
+
+
+                    <select id="workStatus">
+
+                        <option value="Not Started">
+                            Not Started
+                        </option>
+
+                        <option
+                            value="In Progress"
+                            selected
+                        >
+                            In Progress
+                        </option>
+
+                        <option value="Waiting">
+                            Waiting
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEADLINE -->
+
+            <div class="work-form-group">
+
+                <label>
+                    Deadline — تاریخ شمسی
+                </label>
+
+
+                <div class="work-date-grid">
+
+
+                    <div>
+
+                        <span>
+                            Day
+                        </span>
+
+
+                        <input
+                            type="number"
+                            id="workDeadlineDay"
+                            min="1"
+                            max="31"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Month
+                        </span>
+
+
+                        <select id="workDeadlineMonth">
+
+                            <option value="1">
+                                فروردین
+                            </option>
+
+                            <option value="2">
+                                اردیبهشت
+                            </option>
+
+                            <option value="3">
+                                خرداد
+                            </option>
+
+                            <option value="4">
+                                تیر
+                            </option>
+
+                            <option value="5">
+                                مرداد
+                            </option>
+
+                            <option value="6">
+                                شهریور
+                            </option>
+
+                            <option value="7">
+                                مهر
+                            </option>
+
+                            <option value="8">
+                                آبان
+                            </option>
+
+                            <option value="9">
+                                آذر
+                            </option>
+
+                            <option value="10">
+                                دی
+                            </option>
+
+                            <option value="11">
+                                بهمن
+                            </option>
+
+                            <option value="12">
+                                اسفند
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+
+                        <input
+                            type="number"
+                            id="workDeadlineYear"
+                            min="1300"
+                            max="1600"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="work-form-group">
+
+                <label for="workDescription">
+                    Project Description
+                </label>
+
+
+                <textarea
+                    id="workDescription"
+                    placeholder="What needs to be done?"
+                ></textarea>
+
+            </div>
+
+
+            <p
+                id="workFormMessage"
+                class="work-form-message"
+            ></p>
+
+
+            <button
+                type="submit"
+                class="create-work-project-button"
+            >
+                💼 Create Project
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- FILTER -->
+
+    <section class="work-toolbar">
+
+        <div>
+
+            <h2>
+                My Projects
+            </h2>
+
+            <span>
+                Track all your current work.
+            </span>
+
+        </div>
+
+
+        <div class="work-filter-box">
+
+            <label for="workStatusFilter">
+                Filter
+            </label>
+
+
+            <select id="workStatusFilter">
+
+                <option value="All">
+                    All Projects
+                </option>
+
+                <option value="Not Started">
+                    Not Started
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Waiting">
+                    Waiting
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJECTS -->
+
+    <section>
+
+        <div id="workProjectsList">
+        </div>
+
+
+        <div
+            id="emptyWorkProjects"
+            class="empty-work-projects"
+        >
+
+            <span>
+                💼
+            </span>
+
+            <h3>
+                No projects yet
+            </h3>
+
+            <p>
+                Create your first work project above.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/work.js"></script>
+
+</body>
+
+</html>

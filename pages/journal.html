@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Journal | My Life Planner</title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="../css/journal.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>
+            🌷 My Life Planner
+        </h1>
+
+        <p>
+            Plan your life. Track your progress.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="planner-menu">
+
+        <a
+            href="../index.html"
+            class="menu-button"
+        >
+            Dashboard
+        </a>
+
+
+        <a
+            href="daily.html"
+            class="menu-button"
+        >
+            Daily
+        </a>
+
+
+        <a
+            href="learning.html"
+            class="menu-button"
+        >
+            Learning
+        </a>
+
+
+        <a
+            href="goals.html"
+            class="menu-button"
+        >
+            Goals
+        </a>
+
+
+        <a
+            href="tasks.html"
+            class="menu-button"
+        >
+            Tasks
+        </a>
+
+
+        <a
+            href="habits.html"
+            class="menu-button"
+        >
+            Habits
+        </a>
+
+
+        <a
+            href="finance.html"
+            class="menu-button"
+        >
+            Finance
+        </a>
+
+
+        <a
+            href="journal.html"
+            class="menu-button active"
+        >
+            Journal
+        </a>
+
+
+        <a
+            href="progress.html"
+            class="menu-button"
+        >
+            Progress
+        </a>
+
+    </nav>
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <h2>
+            📔 Daily Journal
+        </h2>
+
+        <p>
+            Write about your day, thoughts and gratitude.
+        </p>
+
+    </div>
+
+
+    <div class="journal-layout">
+
+
+        <!-- LEFT -->
+
+        <main class="journal-main">
+
+
+            <!-- DATE -->
+
+            <section class="card journal-date-card">
+
+                <div class="journal-date-header">
+
+                    <div>
+
+                        <h2>
+                            📅 Journal Date
+                        </h2>
+
+                        <p class="card-description">
+                            Each date has its own journal entry.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="journalTodayButton"
+                        class="journal-today-button"
+                    >
+                        Today
+                    </button>
+
+                </div>
+
+
+                <div class="journal-date-grid">
+
+
+                    <div>
+
+                        <span>
+                            Day
+                        </span>
+
+                        <input
+                            type="number"
+                            id="journalDay"
+                            min="1"
+                            max="31"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Month
+                        </span>
+
+                        <select id="journalMonth">
+
+                            <option value="1">
+                                فروردین
+                            </option>
+
+                            <option value="2">
+                                اردیبهشت
+                            </option>
+
+                            <option value="3">
+                                خرداد
+                            </option>
+
+                            <option value="4">
+                                تیر
+                            </option>
+
+                            <option value="5">
+                                مرداد
+                            </option>
+
+                            <option value="6">
+                                شهریور
+                            </option>
+
+                            <option value="7">
+                                مهر
+                            </option>
+
+                            <option value="8">
+                                آبان
+                            </option>
+
+                            <option value="9">
+                                آذر
+                            </option>
+
+                            <option value="10">
+                                دی
+                            </option>
+
+                            <option value="11">
+                                بهمن
+                            </option>
+
+                            <option value="12">
+                                اسفند
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <input
+                            type="number"
+                            id="journalYear"
+                            min="1300"
+                            max="1600"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="journalSelectedDate"
+                    class="journal-selected-date"
+                >
+                </div>
+
+            </section>
+
+
+            <!-- MOOD -->
+
+            <section class="card journal-section">
+
+                <h2>
+                    😊 How are you feeling?
+                </h2>
+
+
+                <div
+                    class="mood-options"
+                    id="moodOptions"
+                >
+
+
+                    <label class="mood-option">
+
+                        <input
+                            type="radio"
+                            name="journalMood"
+                            value="amazing"
+                        >
+
+                        <span class="mood-emoji">
+                            😍
+                        </span>
+
+                        <span>
+                            Amazing
+                        </span>
+
+                    </label>
+
+
+                    <label class="mood-option">
+
+                        <input
+                            type="radio"
+                            name="journalMood"
+                            value="good"
+                        >
+
+                        <span class="mood-emoji">
+                            😊
+                        </span>
+
+                        <span>
+                            Good
+                        </span>
+
+                    </label>
+
+
+                    <label class="mood-option">
+
+                        <input
+                            type="radio"
+                            name="journalMood"
+                            value="okay"
+                        >
+
+                        <span class="mood-emoji">
+                            😐
+                        </span>
+
+                        <span>
+                            Okay
+                        </span>
+
+                    </label>
+
+
+                    <label class="mood-option">
+
+                        <input
+                            type="radio"
+                            name="journalMood"
+                            value="low"
+                        >
+
+                        <span class="mood-emoji">
+                            😔
+                        </span>
+
+                        <span>
+                            Low
+                        </span>
+
+                    </label>
+
+
+                    <label class="mood-option">
+
+                        <input
+                            type="radio"
+                            name="journalMood"
+                            value="bad"
+                        >
+
+                        <span class="mood-emoji">
+                            😣
+                        </span>
+
+                        <span>
+                            Bad
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- MAIN JOURNAL -->
+
+            <section class="card journal-section">
+
+                <div class="journal-section-heading">
+
+                    <div>
+
+                        <h2>
+                            ✍️ My Day
+                        </h2>
+
+                        <p class="card-description">
+                            What happened today?
+                        </p>
+
+                    </div>
+
+
+                    <span id="journalWordCount">
+                        0 words
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="journalText"
+                    class="journal-main-textarea"
+                    placeholder="Write about your day..."
+                ></textarea>
+
+            </section>
+
+
+            <!-- GRATITUDE -->
+
+            <section class="card journal-section">
+
+                <h2>
+                    🤍 Gratitude
+                </h2>
+
+                <p class="card-description">
+                    Write three things you're grateful for today.
+                </p>
+
+
+                <div class="gratitude-list">
+
+
+                    <div class="gratitude-item">
+
+                        <span>
+                            1
+                        </span>
+
+                        <input
+                            type="text"
+                            id="gratitudeOne"
+                            placeholder="I'm grateful for..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="gratitude-item">
+
+                        <span>
+                            2
+                        </span>
+
+                        <input
+                            type="text"
+                            id="gratitudeTwo"
+                            placeholder="I'm grateful for..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="gratitude-item">
+
+                        <span>
+                            3
+                        </span>
+
+                        <input
+                            type="text"
+                            id="gratitudeThree"
+                            placeholder="I'm grateful for..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REFLECTION -->
+
+            <section class="card journal-section">
+
+                <h2>
+                    🌙 Reflection
+                </h2>
+
+
+                <div class="journal-reflection-grid">
+
+
+                    <div>
+
+                        <label for="journalWin">
+                            Today's Win
+                        </label>
+
+                        <textarea
+                            id="journalWin"
+                            placeholder="What are you proud of today?"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="journalLesson">
+                            What I Learned
+                        </label>
+
+                        <textarea
+                            id="journalLesson"
+                            placeholder="What did today teach you?"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="journalTomorrow">
+                            Tomorrow's Focus
+                        </label>
+
+                        <textarea
+                            id="journalTomorrow"
+                            placeholder="What matters most tomorrow?"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BUTTONS -->
+
+            <section class="journal-actions">
+
+                <button
+                    type="button"
+                    id="saveJournalButton"
+                    class="save-journal-button"
+                >
+                    💾 Save Journal
+                </button>
+
+
+                <button
+                    type="button"
+                    id="deleteJournalButton"
+                    class="delete-journal-entry-button"
+                >
+                    Delete Entry
+                </button>
+
+            </section>
+
+
+            <p
+                id="journalMessage"
+                class="journal-message"
+            ></p>
+
+        </main>
+
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="journal-sidebar">
+
+
+            <div class="card">
+
+                <h2>
+                    📚 Previous Entries
+                </h2>
+
+
+                <p class="card-description">
+                    Select an entry to read or edit it.
+                </p>
+
+
+                <div
+                    id="journalEntriesList"
+                    class="journal-entries-list"
+                >
+                </div>
+
+
+                <div
+                    id="journalEmptyEntries"
+                    class="journal-empty-entries"
+                >
+
+                    <span>
+                        📔
+                    </span>
+
+                    <p>
+                        No journal entries yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <a
+        href="../index.html"
+        class="back-button"
+    >
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/journal.js"></script>
+
+</body>
+
+</html>

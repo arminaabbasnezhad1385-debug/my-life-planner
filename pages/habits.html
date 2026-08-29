@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Habits | My Life Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <h1>🌷 My Life Planner</h1>
+
+        <p>Plan your life. Track your progress.</p>
+
+    </header>
+
+
+    <nav class="planner-menu">
+
+        <a href="../index.html" class="menu-button">
+            Dashboard
+        </a>
+
+        <a href="daily.html" class="menu-button">
+            Daily
+        </a>
+
+        <a href="learning.html" class="menu-button">
+            Learning
+        </a>
+
+        <a href="goals.html" class="menu-button">
+            Goals
+        </a>
+
+        <a href="tasks.html" class="menu-button">
+            Tasks
+        </a>
+
+        <a href="habits.html" class="menu-button active">
+            Habits
+        </a>
+
+        <a href="progress.html" class="menu-button">
+            Progress
+        </a>
+
+    </nav>
+
+
+    <div class="page-title">
+
+        <h2>🏃🏻‍♀️ Habit Tracker</h2>
+
+        <p>
+            Build better habits one day at a time.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="habit-progress-header">
+
+            <div>
+
+                <h2>
+                    Today's Habit Progress
+                </h2>
+
+            </div>
+
+
+            <strong
+                class="habit-progress-percentage"
+                data-habit-progress-text
+            >
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress"
+                data-habit-progress-fill
+            ></div>
+
+        </div>
+
+
+        <p class="card-description">
+
+            <span data-habits-status>
+                0 / 0
+            </span>
+
+            habits completed today
+
+        </p>
+
+    </div>
+
+
+    <br>
+
+
+    <div class="card">
+
+        <h2>Today's Habits</h2>
+
+
+        <div class="habit-manager">
+
+            <div class="add-habit-box">
+
+                <input
+                    type="text"
+                    class="new-habit-input"
+                    placeholder="Add a new habit..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    class="small-add-button add-habit-button"
+                >
+                    + Add
+                </button>
+
+            </div>
+
+
+            <div class="custom-habit-list"></div>
+
+
+            <p class="habit-empty-message empty-message">
+                No habits yet 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="../index.html" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/habits.js"></script>
+
+<script src="../js/progress.js"></script>
+
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>

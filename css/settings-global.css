@@ -1,0 +1,483 @@
+/* =========================================
+   PLANNER THEMES
+========================================= */
+
+:root,
+html[data-planner-theme="rose"] {
+
+    --planner-accent:
+        #c08b94;
+
+    --planner-accent-dark:
+        #a96f7b;
+
+    --planner-accent-soft:
+        #fff0ef;
+
+    --planner-accent-border:
+        #dcbfc4;
+
+}
+
+
+html[data-planner-theme="lavender"] {
+
+    --planner-accent:
+        #a18ab8;
+
+    --planner-accent-dark:
+        #846d9d;
+
+    --planner-accent-soft:
+        #f4eff8;
+
+    --planner-accent-border:
+        #cfc1dc;
+
+}
+
+
+html[data-planner-theme="sage"] {
+
+    --planner-accent:
+        #8ea58e;
+
+    --planner-accent-dark:
+        #708970;
+
+    --planner-accent-soft:
+        #f0f5ef;
+
+    --planner-accent-border:
+        #c4d3c1;
+
+}
+
+
+html[data-planner-theme="blue"] {
+
+    --planner-accent:
+        #829fb3;
+
+    --planner-accent-dark:
+        #647f92;
+
+    --planner-accent-soft:
+        #eff5f8;
+
+    --planner-accent-border:
+        #bfd0da;
+
+}
+
+
+html[data-planner-theme="mocha"] {
+
+    --planner-accent:
+        #aa8876;
+
+    --planner-accent-dark:
+        #8d6c5c;
+
+    --planner-accent-soft:
+        #f7f0ec;
+
+    --planner-accent-border:
+        #d7c2b7;
+
+}
+
+
+
+/* =========================================
+   GLOBAL ACCENT OVERRIDES
+========================================= */
+
+.header h1,
+.card h2,
+.page-title h2,
+.goals-list-header h2,
+.work-toolbar h2,
+.learning-list-heading h2,
+.finance-list-header h2,
+.calendar-month-heading h2,
+#selectedCalendarDate {
+
+    color:
+        var(--planner-accent-dark)
+        !important;
+
+}
+
+
+.menu-button.active,
+.planner-button,
+.small-add-button,
+.create-goal-button,
+.add-milestone-button,
+.create-work-project-button,
+.add-work-task-button,
+.finance-submit-button,
+.save-journal-button,
+.calendar-add-event-button,
+.learning-create-button,
+.add-learning-session-button,
+.custom-timer-start {
+
+    background-color:
+        var(--planner-accent)
+        !important;
+
+}
+
+
+.menu-button.active {
+
+    border-color:
+        var(--planner-accent)
+        !important;
+
+}
+
+
+.planner-button:hover,
+.small-add-button:hover,
+.create-goal-button:hover,
+.add-milestone-button:hover,
+.create-work-project-button:hover,
+.add-work-task-button:hover,
+.finance-submit-button:hover,
+.save-journal-button:hover,
+.calendar-add-event-button:hover,
+.learning-create-button:hover,
+.add-learning-session-button:hover,
+.custom-timer-start:hover {
+
+    background-color:
+        var(--planner-accent-dark)
+        !important;
+
+}
+
+
+.progress,
+.goal-progress-fill,
+.work-progress-fill,
+.timer-progress-fill,
+.learning-custom-progress-fill,
+.custom-timer-progress-fill {
+
+    background-color:
+        var(--planner-accent)
+        !important;
+
+}
+
+
+.persian-date,
+.streak-box,
+.goal-deadline-preview,
+.work-status-progress,
+.calendar-today-button,
+.journal-selected-date {
+
+    border-color:
+        var(--planner-accent-border)
+        !important;
+
+}
+
+
+.persian-date,
+.goal-deadline-preview,
+.calendar-today-button,
+.journal-selected-date {
+
+    background-color:
+        var(--planner-accent-soft)
+        !important;
+
+    color:
+        var(--planner-accent-dark)
+        !important;
+
+}
+
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color:
+        var(--planner-accent)
+        !important;
+
+}
+
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body[data-planner-mode="dark"] {
+
+    background-color:
+        #181616 !important;
+
+    color:
+        #e8dddd !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.header p {
+
+    color:
+        #b9aaaa !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.card,
+
+body[data-planner-mode="dark"]
+.goal-card,
+
+body[data-planner-mode="dark"]
+.work-project-card,
+
+body[data-planner-mode="dark"]
+.custom-learning-card,
+
+body[data-planner-mode="dark"]
+.finance-summary-card,
+
+body[data-planner-mode="dark"]
+.learning-summary-card,
+
+body[data-planner-mode="dark"]
+.work-summary-card,
+
+body[data-planner-mode="dark"]
+.goal-summary-item,
+
+body[data-planner-mode="dark"]
+.finance-transaction,
+
+body[data-planner-mode="dark"]
+.empty-goals,
+
+body[data-planner-mode="dark"]
+.empty-work-projects,
+
+body[data-planner-mode="dark"]
+.learning-empty-state,
+
+body[data-planner-mode="dark"]
+.finance-empty-state {
+
+    background-color:
+        #242020 !important;
+
+    color:
+        #e7dddd !important;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.18)
+        !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.menu-button {
+
+    background-color:
+        #272222;
+
+    color:
+        #d7caca;
+
+    border-color:
+        #3b3333;
+
+}
+
+
+body[data-planner-mode="dark"]
+.menu-button:hover {
+
+    background-color:
+        #312929;
+
+}
+
+
+body[data-planner-mode="dark"]
+input,
+
+body[data-planner-mode="dark"]
+textarea,
+
+body[data-planner-mode="dark"]
+select {
+
+    background-color:
+        #2b2525 !important;
+
+    border-color:
+        #453b3b !important;
+
+    color:
+        #eee3e3 !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+input::placeholder,
+
+body[data-planner-mode="dark"]
+textarea::placeholder {
+
+    color:
+        #948585;
+
+}
+
+
+body[data-planner-mode="dark"]
+.custom-task-item,
+
+body[data-planner-mode="dark"]
+.custom-habit-item,
+
+body[data-planner-mode="dark"]
+.focus-item,
+
+body[data-planner-mode="dark"]
+.learning-block,
+
+body[data-planner-mode="dark"]
+.learning-progress-section,
+
+body[data-planner-mode="dark"]
+.learning-session-item,
+
+body[data-planner-mode="dark"]
+.custom-learning-timer,
+
+body[data-planner-mode="dark"]
+.goal-progress-area,
+
+body[data-planner-mode="dark"]
+.milestone-item,
+
+body[data-planner-mode="dark"]
+.work-progress-box,
+
+body[data-planner-mode="dark"]
+.work-task-item,
+
+body[data-planner-mode="dark"]
+.calendar-day,
+
+body[data-planner-mode="dark"]
+.calendar-detail-item,
+
+body[data-planner-mode="dark"]
+.journal-entry-card,
+
+body[data-planner-mode="dark"]
+.finance-mini-card,
+
+body[data-planner-mode="dark"]
+.score-details div {
+
+    background-color:
+        #2c2626 !important;
+
+    border-color:
+        #433939 !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.card-description,
+
+body[data-planner-mode="dark"]
+.learning-list-heading p,
+
+body[data-planner-mode="dark"]
+.goals-list-header span,
+
+body[data-planner-mode="dark"]
+.work-toolbar > div > span {
+
+    color:
+        #a99a96 !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.editable-task-text,
+
+body[data-planner-mode="dark"]
+.editable-habit-text,
+
+body[data-planner-mode="dark"]
+.focus-text,
+
+body[data-planner-mode="dark"]
+.learning-session-name,
+
+body[data-planner-mode="dark"]
+.work-task-text,
+
+body[data-planner-mode="dark"]
+.milestone-text {
+
+    color:
+        #e3d8d5 !important;
+
+}
+
+
+body[data-planner-mode="dark"]
+.calendar-empty-cell {
+
+    background-color:
+        transparent;
+
+}
+
+
+
+/* =========================================
+   TRANSITION
+========================================= */
+
+body,
+.card,
+.menu-button,
+input,
+textarea,
+select {
+
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+
+}

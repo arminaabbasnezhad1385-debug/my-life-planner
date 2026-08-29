@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tasks | My Life Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <h1>🌷 My Life Planner</h1>
+
+        <p>Plan your life. Track your progress.</p>
+
+    </header>
+
+
+    <nav class="planner-menu">
+
+        <a href="../index.html" class="menu-button">
+            Dashboard
+        </a>
+
+        <a href="daily.html" class="menu-button">
+            Daily
+        </a>
+
+        <a href="learning.html" class="menu-button">
+            Learning
+        </a>
+
+        <a href="goals.html" class="menu-button">
+            Goals
+        </a>
+
+        <a href="tasks.html" class="menu-button active">
+            Tasks
+        </a>
+
+        <a href="habits.html" class="menu-button">
+            Habits
+        </a>
+
+        <a href="progress.html" class="menu-button">
+            Progress
+        </a>
+
+    </nav>
+
+
+    <div class="page-title">
+
+        <h2>☑️ My Tasks</h2>
+
+        <p>
+            Add, edit, complete or remove your daily tasks.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="task-manager">
+
+
+            <div class="add-task-box">
+
+                <input
+                    type="text"
+                    class="new-task-input"
+                    placeholder="Write a new task..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    class="small-add-button add-task-button"
+                >
+                    + Add
+                </button>
+
+            </div>
+
+
+            <div class="custom-task-list"></div>
+
+
+            <p class="task-empty-message empty-message">
+                No tasks yet 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="../index.html" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="../js/tasks.js"></script>
+
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>
