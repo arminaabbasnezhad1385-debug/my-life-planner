@@ -1,0 +1,21 @@
+{
+    "name": "My Life Planner",
+    "short_name": "Planner",
+    "description": "Personal planner for tasks, habits, learning, goals and daily life.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#fff8f5",
+    "theme_color": "#c08b94",
+    "lang": "en",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "assets/icons/planner-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
