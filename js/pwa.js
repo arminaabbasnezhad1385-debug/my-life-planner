@@ -1,6 +1,6 @@
 /* =========================================
    MY LIFE PLANNER
-   PWA / ADD TO HOME SCREEN
+   PWA + AUTH GUARD LOADER
 ========================================= */
 
 (function () {
@@ -8,16 +8,90 @@
     "use strict";
 
 
-    /* =========================================
-       STATE
-    ========================================= */
+    if (
+        window.PlannerPWA
+    ) {
 
-    let deferredInstallPrompt =
+        return;
+
+    }
+
+
+
+    let deferredPrompt =
         null;
 
 
     let installButton =
         null;
+
+
+
+    /* =========================================
+       PATH
+    ========================================= */
+
+    function isPagesFolder() {
+
+        return window.location.pathname
+            .includes(
+                "/pages/"
+            );
+
+    }
+
+
+
+    /* =========================================
+       LOAD AUTH GUARD
+    ========================================= */
+
+    function loadAuthGuard() {
+
+        if (
+            window.PlannerAuthGuard
+
+            ||
+
+            document.querySelector(
+                "script[data-planner-auth-guard]"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        const script =
+            document.createElement(
+                "script"
+            );
+
+
+        script.src =
+            isPagesFolder()
+
+                ?
+
+                "../js/auth-guard.js"
+
+                :
+
+                "js/auth-guard.js";
+
+
+        script.setAttribute(
+            "data-planner-auth-guard",
+            ""
+        );
+
+
+        document.head.appendChild(
+            script
+        );
+
+    }
 
 
 
@@ -30,10 +104,16 @@
         return (
             localStorage.getItem(
                 "myPlannerLanguage"
-            ) === "fa"
+            )
+            ===
+            "fa"
+
                 ?
+
                 "fa"
+
                 :
+
                 "en"
         );
 
@@ -41,14 +121,23 @@
 
 
 
-    function getInstallText() {
+    function getText(
+        english,
+        persian
+    ) {
 
         return (
-            getLanguage() === "fa"
+            getLanguage()
+            ===
+            "fa"
+
                 ?
-                "📲 نصب برنامه"
+
+                persian
+
                 :
-                "📲 Install App"
+
+                english
         );
 
     }
@@ -56,7 +145,40 @@
 
 
     /* =========================================
-       CHECK STANDALONE
+       IOS
+    ========================================= */
+
+    function isIOS() {
+
+        return (
+
+            /iphone|ipad|ipod/i
+                .test(
+                    navigator.userAgent
+                )
+
+            ||
+
+            (
+                navigator.platform
+                ===
+                "MacIntel"
+
+                &&
+
+                navigator.maxTouchPoints
+                >
+                1
+            )
+
+        );
+
+    }
+
+
+
+    /* =========================================
+       STANDALONE
     ========================================= */
 
     function isStandalone() {
@@ -70,7 +192,9 @@
             ||
 
             window.navigator
-                .standalone === true
+                .standalone
+            ===
+            true
 
         );
 
@@ -79,7 +203,7 @@
 
 
     /* =========================================
-       ADD MANIFEST
+       MANIFEST
     ========================================= */
 
     function addManifest() {
@@ -105,18 +229,15 @@
             "manifest";
 
 
-        const inPagesFolder =
-            window.location.pathname
-                .includes(
-                    "/pages/"
-                );
-
-
         link.href =
-            inPagesFolder
+            isPagesFolder()
+
                 ?
+
                 "../manifest.webmanifest"
+
                 :
+
                 "manifest.webmanifest";
 
 
@@ -134,33 +255,106 @@
 
     function addThemeColor() {
 
-        if (
+        let meta =
             document.querySelector(
                 'meta[name="theme-color"]'
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        const meta =
-            document.createElement(
-                "meta"
             );
 
 
-        meta.name =
-            "theme-color";
+        if (!meta) {
+
+            meta =
+                document.createElement(
+                    "meta"
+                );
+
+
+            meta.name =
+                "theme-color";
+
+
+            document.head.appendChild(
+                meta
+            );
+
+        }
 
 
         meta.content =
             "#c08b94";
 
+    }
 
-        document.head.appendChild(
-            meta
+
+
+    /* =========================================
+       APPLE
+    ========================================= */
+
+    function addAppleMeta() {
+
+        const metas = [
+
+            {
+                name:
+                    "apple-mobile-web-app-capable",
+
+                content:
+                    "yes"
+            },
+
+            {
+                name:
+                    "apple-mobile-web-app-status-bar-style",
+
+                content:
+                    "default"
+            },
+
+            {
+                name:
+                    "apple-mobile-web-app-title",
+
+                content:
+                    "Planner"
+            }
+
+        ];
+
+
+        metas.forEach(
+            function(item) {
+
+                if (
+                    document.querySelector(
+                        `meta[name="${item.name}"]`
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                const meta =
+                    document.createElement(
+                        "meta"
+                    );
+
+
+                meta.name =
+                    item.name;
+
+
+                meta.content =
+                    item.content;
+
+
+                document.head.appendChild(
+                    meta
+                );
+
+            }
         );
 
     }
@@ -168,100 +362,10 @@
 
 
     /* =========================================
-       IOS META
+       STYLE
     ========================================= */
 
-    function addAppleMeta() {
-
-        if (
-            !document.querySelector(
-                'meta[name="apple-mobile-web-app-capable"]'
-            )
-        ) {
-
-            const capable =
-                document.createElement(
-                    "meta"
-                );
-
-
-            capable.name =
-                "apple-mobile-web-app-capable";
-
-
-            capable.content =
-                "yes";
-
-
-            document.head.appendChild(
-                capable
-            );
-
-        }
-
-
-        if (
-            !document.querySelector(
-                'meta[name="apple-mobile-web-app-status-bar-style"]'
-            )
-        ) {
-
-            const statusBar =
-                document.createElement(
-                    "meta"
-                );
-
-
-            statusBar.name =
-                "apple-mobile-web-app-status-bar-style";
-
-
-            statusBar.content =
-                "default";
-
-
-            document.head.appendChild(
-                statusBar
-            );
-
-        }
-
-
-        if (
-            !document.querySelector(
-                'meta[name="apple-mobile-web-app-title"]'
-            )
-        ) {
-
-            const title =
-                document.createElement(
-                    "meta"
-                );
-
-
-            title.name =
-                "apple-mobile-web-app-title";
-
-
-            title.content =
-                "Planner";
-
-
-            document.head.appendChild(
-                title
-            );
-
-        }
-
-    }
-
-
-
-    /* =========================================
-       BUTTON STYLE
-    ========================================= */
-
-    function addInstallStyle() {
+    function createStyle() {
 
         if (
             document.getElementById(
@@ -290,29 +394,25 @@
 
                 position: fixed;
 
-                right: 20px;
+                bottom: 18px;
+                right: 18px;
 
-                bottom: 20px;
-
-                z-index: 999998;
+                z-index: 999990;
 
                 display: none;
 
                 align-items: center;
-
                 justify-content: center;
 
-                min-height: 46px;
+                min-height: 48px;
 
                 padding:
                     0
                     18px;
 
-                border:
-                    none;
+                border: none;
 
-                border-radius:
-                    14px;
+                border-radius: 15px;
 
                 background:
                     #c08b94;
@@ -320,33 +420,22 @@
                 color:
                     #ffffff;
 
-                font-size:
-                    14px;
-
-                font-weight:
-                    700;
-
-                cursor:
-                    pointer;
-
                 box-shadow:
                     0
                     8px
-                    25px
+                    30px
                     rgba(
-                        70,
-                        45,
-                        45,
-                        0.20
+                        0,
+                        0,
+                        0,
+                        0.18
                     );
 
-            }
+                cursor: pointer;
 
+                font-size: 14px;
 
-            .planner-install-button:hover {
-
-                transform:
-                    translateY(-2px);
+                font-weight: 700;
 
             }
 
@@ -354,36 +443,22 @@
             html[dir="rtl"]
             .planner-install-button {
 
-                right:
-                    auto;
+                right: auto;
 
-                left:
-                    20px;
+                left: 18px;
 
             }
 
 
             @media (
-                max-width: 550px
+                max-width: 600px
             ) {
 
                 .planner-install-button {
 
-                    right:
-                        12px;
+                    right: 12px;
 
-                    bottom:
-                        12px;
-
-                    min-height:
-                        43px;
-
-                    padding:
-                        0
-                        14px;
-
-                    font-size:
-                        12px;
+                    bottom: 12px;
 
                 }
 
@@ -391,11 +466,9 @@
                 html[dir="rtl"]
                 .planner-install-button {
 
-                    right:
-                        auto;
+                    right: auto;
 
-                    left:
-                        12px;
+                    left: 12px;
 
                 }
 
@@ -413,7 +486,7 @@
 
 
     /* =========================================
-       CREATE INSTALL BUTTON
+       INSTALL BUTTON
     ========================================= */
 
     function createInstallButton() {
@@ -449,10 +522,6 @@
             "planner-install-button";
 
 
-        installButton.textContent =
-            getInstallText();
-
-
         installButton.setAttribute(
             "data-language-ignore",
             ""
@@ -461,7 +530,7 @@
 
         installButton.addEventListener(
             "click",
-            installPlanner
+            installApp
         );
 
 
@@ -469,39 +538,17 @@
             installButton
         );
 
-    }
 
-
-
-    /* =========================================
-       UPDATE LANGUAGE
-    ========================================= */
-
-    function updateButtonLanguage() {
-
-        if (
-            installButton
-        ) {
-
-            installButton.textContent =
-                getInstallText();
-
-        }
+        updateButtonText();
 
     }
 
 
 
-    /* =========================================
-       SHOW
-    ========================================= */
-
-    function showInstallButton() {
+    function updateButtonText() {
 
         if (
             !installButton
-            ||
-            isStandalone()
         ) {
 
             return;
@@ -509,18 +556,37 @@
         }
 
 
-        installButton.style.display =
-            "flex";
+        installButton.textContent =
+            getText(
+
+                "📲 Install App",
+
+                "📲 نصب برنامه"
+
+            );
 
     }
 
 
 
-    /* =========================================
-       HIDE
-    ========================================= */
+    function showButton() {
 
-    function hideInstallButton() {
+        if (
+            installButton
+            &&
+            !isStandalone()
+        ) {
+
+            installButton.style.display =
+                "flex";
+
+        }
+
+    }
+
+
+
+    function hideButton() {
 
         if (
             installButton
@@ -539,23 +605,60 @@
        INSTALL
     ========================================= */
 
-    async function installPlanner() {
+    async function installApp() {
 
         if (
-            !deferredInstallPrompt
+            isIOS()
+            &&
+            !deferredPrompt
         ) {
+
+            alert(
+
+                getText(
+
+                    "Open this website in Safari, tap Share, then choose Add to Home Screen.",
+
+                    "سایت را در Safari باز کنید، روی Share بزنید و سپس Add to Home Screen را انتخاب کنید."
+
+                )
+
+            );
+
 
             return;
 
         }
 
 
-        deferredInstallPrompt.prompt();
+        if (
+            !deferredPrompt
+        ) {
+
+            alert(
+
+                getText(
+
+                    "The install option is not available yet.",
+
+                    "گزینه نصب هنوز آماده نیست."
+
+                )
+
+            );
+
+
+            return;
+
+        }
+
+
+        deferredPrompt.prompt();
 
 
         try {
 
-            await deferredInstallPrompt
+            await deferredPrompt
                 .userChoice;
 
         }
@@ -563,76 +666,73 @@
         catch(error) {
 
             console.error(
-                "Install error:",
                 error
             );
 
         }
 
 
-        deferredInstallPrompt =
+        deferredPrompt =
             null;
 
 
-        hideInstallButton();
+        hideButton();
 
     }
 
 
 
     /* =========================================
-       INSTALL EVENT
+       EVENTS
     ========================================= */
 
     window.addEventListener(
+
         "beforeinstallprompt",
+
         function(event) {
 
             event.preventDefault();
 
 
-            deferredInstallPrompt =
+            deferredPrompt =
                 event;
 
 
-            showInstallButton();
+            showButton();
 
         }
+
     );
 
 
-
-    /* =========================================
-       INSTALLED
-    ========================================= */
-
     window.addEventListener(
+
         "appinstalled",
+
         function() {
 
-            deferredInstallPrompt =
+            deferredPrompt =
                 null;
 
 
-            hideInstallButton();
-
-
-            console.log(
-                "My Life Planner installed."
-            );
+            hideButton();
 
         }
+
     );
 
 
-
-    /* =========================================
-       LANGUAGE EVENT
-    ========================================= */
-
     window.addEventListener(
+
         "plannerLanguageChanged",
-        updateButtonLanguage
+
+        function() {
+
+            updateButtonText();
+
+        }
+
     );
 
 
@@ -656,53 +756,54 @@
         }
 
 
-        const inPagesFolder =
-            window.location.pathname
-                .includes(
-                    "/pages/"
-                );
+        if (
+            window.location.protocol
+            ===
+            "file:"
+        ) {
+
+            return;
+
+        }
 
 
         const workerPath =
-            inPagesFolder
+            isPagesFolder()
+
                 ?
+
                 "../sw.js"
+
                 :
+
                 "sw.js";
 
 
-        window.addEventListener(
-            "load",
-            function() {
+        navigator
+            .serviceWorker
+            .register(
+                workerPath
+            )
+            .then(
+                function(registration) {
 
-                navigator
-                    .serviceWorker
-                    .register(
-                        workerPath
-                    )
-                    .then(
-                        function(registration) {
-
-                            console.log(
-                                "Planner Service Worker registered:",
-                                registration.scope
-                            );
-
-                        }
-                    )
-                    .catch(
-                        function(error) {
-
-                            console.error(
-                                "Service Worker error:",
-                                error
-                            );
-
-                        }
+                    console.log(
+                        "Service Worker:",
+                        registration.scope
                     );
 
-            }
-        );
+                }
+            )
+            .catch(
+                function(error) {
+
+                    console.error(
+                        "Service Worker error:",
+                        error
+                    );
+
+                }
+            );
 
     }
 
@@ -712,7 +813,18 @@
        START
     ========================================= */
 
-    function startPWA() {
+    function start() {
+
+        /*
+            LOGIN PROTECTION
+        */
+
+        loadAuthGuard();
+
+
+        /*
+            PWA
+        */
 
         addManifest();
 
@@ -720,7 +832,7 @@
 
         addAppleMeta();
 
-        addInstallStyle();
+        createStyle();
 
         createInstallButton();
 
@@ -731,7 +843,15 @@
             isStandalone()
         ) {
 
-            hideInstallButton();
+            hideButton();
+
+        }
+
+        else if (
+            isIOS()
+        ) {
+
+            showButton();
 
         }
 
@@ -740,28 +860,45 @@
 
 
     /* =========================================
-       DOM READY
+       GLOBAL
     ========================================= */
 
+    window.PlannerPWA = {
+
+        install:
+            installApp,
+
+        isStandalone:
+            isStandalone
+
+    };
+
+
+
     if (
-        document.readyState ===
+        document.readyState
+        ===
         "loading"
     ) {
 
         document.addEventListener(
+
             "DOMContentLoaded",
-            startPWA,
+
+            start,
+
             {
                 once:
                     true
             }
+
         );
 
     }
 
     else {
 
-        startPWA();
+        start();
 
     }
 
