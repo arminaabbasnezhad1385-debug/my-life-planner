@@ -4,16 +4,18 @@
 ========================================= */
 
 const CACHE_NAME =
-    "my-life-planner-v1";
+    "my-life-planner-v3";
 
 
-const APP_FILES = [
+const CORE_FILES = [
 
     "./",
 
     "./index.html",
 
     "./auth.html",
+
+    "./manifest.webmanifest",
 
     "./css/style.css",
 
@@ -23,7 +25,9 @@ const APP_FILES = [
 
     "./js/pwa.js",
 
-    "./manifest.webmanifest",
+    "./js/auth-guard.js",
+
+    "./js/supabase-config.js",
 
     "./assets/icons/planner-icon.svg"
 
@@ -36,7 +40,9 @@ const APP_FILES = [
 ========================================= */
 
 self.addEventListener(
+
     "install",
+
     function(event) {
 
         event.waitUntil(
@@ -49,7 +55,7 @@ self.addEventListener(
                     function(cache) {
 
                         return cache.addAll(
-                            APP_FILES
+                            CORE_FILES
                         );
 
                     }
@@ -61,6 +67,7 @@ self.addEventListener(
         self.skipWaiting();
 
     }
+
 );
 
 
@@ -70,7 +77,9 @@ self.addEventListener(
 ========================================= */
 
 self.addEventListener(
+
     "activate",
+
     function(event) {
 
         event.waitUntil(
@@ -78,16 +87,17 @@ self.addEventListener(
             caches
                 .keys()
                 .then(
-                    function(cacheNames) {
+                    function(names) {
 
                         return Promise.all(
 
-                            cacheNames
+                            names
                                 .filter(
                                     function(name) {
 
                                         return (
-                                            name !==
+                                            name
+                                            !==
                                             CACHE_NAME
                                         );
 
@@ -114,6 +124,7 @@ self.addEventListener(
         self.clients.claim();
 
     }
+
 );
 
 
@@ -123,7 +134,9 @@ self.addEventListener(
 ========================================= */
 
 self.addEventListener(
+
     "fetch",
+
     function(event) {
 
         if (
@@ -137,67 +150,95 @@ self.addEventListener(
         }
 
 
+        const url =
+            new URL(
+                event.request.url
+            );
+
+
+        if (
+            url.origin
+            !==
+            self.location.origin
+        ) {
+
+            return;
+
+        }
+
+
         event.respondWith(
 
-            caches
-                .match(
-                    event.request
-                )
+            fetch(
+                event.request
+            )
                 .then(
-                    function(cachedResponse) {
+                    function(response) {
 
                         if (
-                            cachedResponse
+                            response
+                            &&
+                            response.status
+                            ===
+                            200
                         ) {
 
-                            return cachedResponse;
+                            const clone =
+                                response.clone();
+
+
+                            caches
+                                .open(
+                                    CACHE_NAME
+                                )
+                                .then(
+                                    function(cache) {
+
+                                        cache.put(
+                                            event.request,
+                                            clone
+                                        );
+
+                                    }
+                                );
 
                         }
 
 
-                        return fetch(
-                            event.request
-                        )
+                        return response;
+
+                    }
+                )
+                .catch(
+                    function() {
+
+                        return caches
+                            .match(
+                                event.request
+                            )
                             .then(
-                                function(networkResponse) {
+                                function(cached) {
 
                                     if (
-                                        !networkResponse
-                                        ||
-                                        networkResponse.status
-                                        !==
-                                        200
+                                        cached
                                     ) {
 
-                                        return networkResponse;
+                                        return cached;
 
                                     }
 
 
-                                    const responseClone =
-                                        networkResponse.clone();
+                                    if (
+                                        event.request.mode
+                                        ===
+                                        "navigate"
+                                    ) {
 
-
-                                    caches
-                                        .open(
-                                            CACHE_NAME
-                                        )
-                                        .then(
-                                            function(cache) {
-
-                                                cache.put(
-
-                                                    event.request,
-
-                                                    responseClone
-
-                                                );
-
-                                            }
+                                        return caches.match(
+                                            "./index.html"
                                         );
 
-
-                                    return networkResponse;
+                                    }
 
                                 }
                             );
@@ -208,4 +249,5 @@ self.addEventListener(
         );
 
     }
+
 );
