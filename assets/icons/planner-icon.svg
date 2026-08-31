@@ -1,0 +1,37 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+>
+
+    <rect
+        width="512"
+        height="512"
+        rx="110"
+        fill="#fff8f5"
+    />
+
+    <circle
+        cx="256"
+        cy="256"
+        r="175"
+        fill="#c08b94"
+    />
+
+    <circle
+        cx="256"
+        cy="256"
+        r="145"
+        fill="#ffffff"
+    />
+
+    <text
+        x="256"
+        y="310"
+        text-anchor="middle"
+        font-size="175"
+        font-family="Arial, sans-serif"
+    >
+        🌷
+    </text>
+
+</svg>
