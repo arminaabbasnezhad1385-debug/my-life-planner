@@ -1230,3 +1230,115 @@ systemThemeMedia
 ========================================= */
 
 updatePlannerApp();
+
+/* =========================================
+   LOAD GLOBAL LANGUAGE SYSTEM
+========================================= */
+
+(function loadPlannerLanguage() {
+
+    if (
+        window.PlannerLanguage
+        ||
+        document.querySelector(
+            "script[data-planner-language-script]"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const inPagesFolder =
+
+        window.location.pathname
+            .includes(
+                "/pages/"
+            );
+
+
+    const script =
+
+        document.createElement(
+            "script"
+        );
+
+
+    script.src =
+
+        inPagesFolder
+
+            ?
+
+            "../js/planner-language.js"
+
+            :
+
+            "js/planner-language.js";
+
+
+    script.setAttribute(
+
+        "data-planner-language-script",
+
+        ""
+
+    );
+
+
+    document.body.appendChild(
+        script
+    );
+
+})();
+
+/* =========================================
+   LOAD PWA SYSTEM
+========================================= */
+
+(function loadPlannerPWA() {
+
+    if (
+        document.querySelector(
+            "script[data-planner-pwa]"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const inPagesFolder =
+        window.location.pathname
+            .includes(
+                "/pages/"
+            );
+
+
+    const script =
+        document.createElement(
+            "script"
+        );
+
+
+    script.src =
+        inPagesFolder
+            ?
+            "../js/pwa.js"
+            :
+            "js/pwa.js";
+
+
+    script.setAttribute(
+        "data-planner-pwa",
+        ""
+    );
+
+
+    document.body.appendChild(
+        script
+    );
+
+})();
